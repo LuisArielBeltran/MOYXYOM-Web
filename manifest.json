@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "MOYXYOM Pro: Navaja Suiza PDF",
+  "version": "1.0",
+  "description": "Edición y conversión avanzada de PDFs directamente en tu navegador.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://moyxyom-backend-production.up.railway.app/*"
+  ],
+  "action": {
+    "default_title": "Abrir MOYXYOM Pro"
+    // Fíjate que NO hay "default_popup". Al hacer clic, activaremos el script.
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "128": "icon128.png" // Necesitarás un logo de MOYXYOM de 128x128px
+  }
+}

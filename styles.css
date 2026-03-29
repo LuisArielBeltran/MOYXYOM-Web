@@ -1,0 +1,121 @@
+/* --- Variables de Color (Psicología) --- */
+:root {
+  --confianza: #0056D2;
+  --fondo: #FFFFFF;
+  --gris-suave: #F4F7F6;
+  --negro: #1A1A1A;
+  --verde: #28A745;
+  --border-color: #E1E4E8;
+}
+
+/* --- Estilos Base --- */
+body {
+  margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--fondo); color: var(--negro);
+}
+
+.container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 20px; }
+
+/* --- Header --- */
+header {
+  background-color: var(--gris-suave); padding: 15px 5%;
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 1px solid var(--border-color);
+}
+.logo { font-size: 24px; font-weight: bold; }
+.pro-tag { background-color: var(--confianza); color: white; padding: 2px 6px; border-radius: 4px; font-size: 12px; }
+
+/* --- Cuadrícula de Herramientas (Predictivo) --- */
+.tools-grid { display: flex; gap: 10px; margin-bottom: 30px; flex-wrap: wrap; }
+.tool-btn, .tool-btnacc {
+  padding: 12px 20px; border: 1px solid var(--border-color);
+  background-color: white; border-radius: 8px; cursor: pointer;
+  transition: all 0.2s; font-weight: 500;
+}
+.tool-btn:hover { background-color: var(--gris-suave); }
+.tool-btn.active {
+  background-color: var(--confianza); color: white; border-color: var(--confianza);
+}
+.tool-btnacc { border-color: var(--border-color); background-color: #f0f0f0;}
+
+/* --- Zona de Arrastre (Ágil) --- */
+.drop-zone {
+  background-color: var(--gris-suave); border: 2px dashed var(--border-color);
+  border-radius: 12px; padding: 50px; text-align: center;
+  cursor: pointer; transition: border-color 0.2s; min-height: 200px;
+}
+.drop-zone:hover, .drop-zone.dragging { border-color: var(--confianza); background-color: #eef2f8; }
+.drop-content .icon { font-size: 48px; display: block; margin-bottom: 15px; }
+.sub-text { color: #666; font-size: 14px; }
+
+/* Lista de archivos dentro de la zona */
+.file-list { margin-top: 20px; text-align: left; max-height: 150px; overflow-y: auto; }
+.file-item { background: white; padding: 8px; border-radius: 4px; margin-bottom: 5px; border: 1px solid #eee; font-size: 14px; }
+
+/* --- Zona de Acción --- */
+.action-zone { margin-top: 30px; text-align: center; }
+.process-btn {
+  background-color: var(--verde); color: white; border: none;
+  padding: 15px 40px; font-size: 18px; font-weight: bold;
+  border-radius: 8px; cursor: pointer; transition: opacity 0.2s;
+}
+.process-btn:disabled { opacity: 0.5; cursor: not-getallowed; }
+.process-btn:hover:not(:disabled) { opacity: 0.9; }
+
+#vip-key { padding: 10px; width: 300px; border-radius: 4px; border: 1px solid var(--border-color); margin-bottom: 15px;}
+#status { margin-top: 15px; font-weight: bold; }
+
+
+/* =========================================
+   ESTILOS DE LA MESA DE TRABAJO (LIENZO)
+   ========================================= */
+.oculto {
+  display: none !important;
+}
+
+#lienzo-espacio {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f8fafc;
+  border: 2px dashed #cbd5e1;
+  border-radius: 12px;
+}
+
+#pdf-grid {
+  display: grid;
+  /* Esto crea columnas automáticas que se adaptan al tamaño */
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.pagina-pdf {
+  background: white;
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.pagina-pdf:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* El lienzo real donde se dibuja la imagen de la página */
+.pagina-pdf canvas {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+}
+
+.numero-pagina {
+  display: block;
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #64748b;
+}

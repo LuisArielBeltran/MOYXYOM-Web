@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><title>Generador de Logo</title></head>
+<body>
+  <h2>Generando tu logo MOYXYOM... revisa tus descargas.</h2>
+  <script>
+    // 1. Creamos un lienzo invisible de 128x128
+    const canvas = document.createElement('canvas');
+    canvas.width = 128; 
+    canvas.height = 128;
+    const ctx = canvas.getContext('2d');
+
+    // 2. Pintamos el fondo de color negro
+    ctx.fillStyle = '#000000';
+    ctx.fillRect(0, 0, 128, 128);
+
+    // 3. Escribimos "MoyxyoM" asimétrico en dorado
+    ctx.fillStyle = '#FFD700'; // Dorado
+    ctx.font = 'bold 24px Arial'; // Tamaño de fuente
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('MoyxyoM', 64, 64); // Centro exacto
+
+    // 4. Forzamos la descarga automática como PNG
+    const enlace = document.createElement('a');
+    enlace.download = 'icon128.png';
+    enlace.href = canvas.toDataURL('image/png');
+    enlace.click();
+  </script>
+</body>
+</html>
